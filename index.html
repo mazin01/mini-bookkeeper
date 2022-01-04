@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="bookkeeper, accountant, count, expenses, income">
+    <meta name="author" content="Mazin">
+    <meta name="description" content="A mini bookkeeper app to take care of your day to day transactions and eseily count down your balance.">
+    <link rel="icon" href="./mini-bookkeeper-icon.png">
+    <title>Mini Bookkeeper</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button id="theme-btn" class="theme-btn">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="moon" class="svg-inline--fa fa-moon fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg>
+    </button>
+    <h1>Mini Bookkeeper</h1>
+    <div class="container">
+        <div class="balance-container">
+            <h4>Current Balance</h4>
+            <h1 id="balance">+$0.00</h1> 
+        </div>
+        <div class="inc-exp-container">
+            <div>
+                <h4>Income</h4>
+                <p id="money-blus" class="money blus">+$0.00</p>
+            </div>
+            <div>
+                <h4>Expense</h4>
+                <p id="money-minus" class="money minus">-$0.00</p>
+            </div>
+        </div>
+        <h3>Transactions</h3>
+        <ul id="list" class="list">
+            <li class="minus">Cash <span>-$400</span><button class="delete-btn">x</button></li>
+        </ul>
+        <h3>Add New</h3>
+        <form id="form">
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input type="text" id="tran-title">
+            </div>
+            <div class="form-control">
+                <label for="amount">Amount <br/><span>Add <span>-</span> for expenses<span>|</span>Add <span>+</span> for income</span></label>
+                <input type="number" id="tran-amount">
+            </div>
+            <button class="btn">Add</button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

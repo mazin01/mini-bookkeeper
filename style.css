@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --body-background-color: #f7f7f7;
+    --containers-color: #fff;
+    --body-text-color: #000;
+    --theme-btn-color: #333;
+    --btn-text-color: #eee;
+    --body-lines: solid 1px #9fd2db;
+    --primary-color: #2e5281;
+}
+
+[data-theme="dark"] {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.102), 0 1px 2px rgba(0, 0, 0, 0.205);
+    --body-background-color: #1a1a1a;
+    --containers-color: #0c0c0c;
+    --body-text-color: #a1a1a1;
+    --theme-btn-color: #ddd;
+    --btn-text-color: #222;
+    --body-lines: solid 1px #4d757e;
+    --primary-color: #0b7bd6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body-background-color);
+    color: var(--body-text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    margin: 30px auto;
+    width: 500px;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 7px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: var(--theme-btn-color);
+    color: var(--btn-text-color);
+    opacity: 70%;
+    border-bottom-right-radius: 5px;
+}
+
+.theme-btn>svg {
+    width: 25px;
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+h3 {
+    border-bottom: var(--body-lines);
+    padding-bottom: 10px;
+    margin: 40px 0px 10px;
+    font-size: x-large;
+}
+
+h4 {
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.balance-container {
+    border-top: var(--body-lines);
+    border-bottom: var(--body-lines);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding-top: 10px;
+}
+
+.balance-container>h1 {
+    padding: 10px;
+    margin: 5px;
+}
+
+.inc-exp-container {
+    background-color: var(--containers-color);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.inc-exp-container>div {
+    flex: 1;
+    text-align: center;
+}
+
+.inc-exp-container>div:first-of-type {
+    border-right: var(--body-lines);
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0px;
+}
+
+.money.blus {
+    color: #2bbd68;
+}
+
+.money.minus {
+    color: #c0392b;
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0px;
+    font-size: larger;
+}
+
+label>span {
+    font-size: small;
+    color: #555;
+    margin-left: 5px;
+}
+
+label>span>span {
+    font-weight: bold;
+    font-size: medium;
+    margin: 0px 5px;
+}
+
+input[type='text'], input[type='number'] {
+    background-color: var(--containers-color);
+    border: var(--body-lines);
+    border-radius: 2px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    color: var(--body-text-color);
+}
+
+input[type='text']:focus, input[type='number']:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    color: var(--btn-text-color);
+    border: 0px;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0px 30px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.btn:focus, .delete-btn:focus {
+    outline: 0px;
+}
+
+.list {
+    list-style-type: none;
+    padding: 0px;
+    margin-bottom: 40px; 
+}
+
+.list li {
+    background-color: var(--containers-color);
+    box-shadow: var(--box-shadow);
+    color: var(--body-text-color);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.list li.blus {
+    border-right: #2bbd68 5px solid;
+}
+
+.list li.minus {
+    border-right: #c0392b 5px solid;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #ff0000;
+    border: 0px;
+    color: var(--btn-text-color);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-100%, -50%);
+    visibility: hidden;
+    transition: visibility 0.3 ease;
+}
+
+.list li:hover .delete-btn {
+    visibility: visible;
+}
+
+@media (max-width: 550px) {
+    .container {
+        max-width: 280px;
+    }
+}

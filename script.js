@@ -71,9 +71,11 @@ function addTransactionDOM(transaction) {
     // Add class name based on the transaction amount
     item.classList.add(transaction.amount < 0 ? 'minus' : 'blus');
 
+    item.setAttribute("tabindex", "0")
+
     item.innerHTML = `
     ${transaction.title} <span>${sign}${Math.abs(transaction.amount)}</span> 
-    <button class="delete-btn" onClick="removeTransaction(${transaction.id})">x</button>`;
+    <button class="delete-btn" tabindex="0" onClick="removeTransaction(${transaction.id})">x</button>`;
 
     list.appendChild(item);
 }
